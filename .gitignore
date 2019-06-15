@@ -1,0 +1,13 @@
+*.o
+*.pro.user
+moc_*.cpp
+qrc_*.cpp
+*/.obj/*
+*/.moc/*
+*/.rcc/*
+*/bin/*
+*/Debug/*
+*/.ui/*
+*/.vs/*
+*/.qmake.stash
+Makefile
