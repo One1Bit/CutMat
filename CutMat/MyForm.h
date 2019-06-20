@@ -53,6 +53,8 @@ namespace CutMat {
 
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -88,6 +90,8 @@ namespace CutMat {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -236,6 +240,8 @@ namespace CutMat {
 			// 
 			this->dataGridView2->AllowUserToAddRows = false;
 			this->dataGridView2->AllowUserToDeleteRows = false;
+			this->dataGridView2->AllowUserToResizeColumns = false;
+			this->dataGridView2->AllowUserToResizeRows = false;
 			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(246, 213);
@@ -247,12 +253,37 @@ namespace CutMat {
 			this->dataGridView2->Size = System::Drawing::Size(205, 283);
 			this->dataGridView2->TabIndex = 23;
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(484, 281);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(50, 30);
+			this->label5->TabIndex = 24;
+			this->label5->Text = L"x*=";
+			this->label5->Click += gcnew System::EventHandler(this, &MyForm::Label5_Click);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label6->Location = System::Drawing::Point(585, 353);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(54, 30);
+			this->label6->TabIndex = 25;
+			this->label6->Text = L"Z*=";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(883, 518);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button2);
@@ -302,10 +333,10 @@ namespace CutMat {
 			delta.emplace_back(Convert::ToDouble(textBox3->Text));
 			delta.emplace_back(Convert::ToDouble(textBox4->Text));
 			mater temp1;
-			temp1.length = Convert::ToInt32(textBox5->Text);
+			temp1.length = Convert::ToDouble(textBox5->Text);
 			temp1.value = Convert::ToInt32(textBox7->Text);
 			mater temp2;
-			temp2.length = Convert::ToInt32(textBox6->Text);
+			temp2.length = Convert::ToDouble(textBox6->Text);
 			temp2.value = Convert::ToInt32(textBox8->Text);
 			mat.emplace_back(temp1);
 			mat.emplace_back(temp2);
@@ -327,7 +358,7 @@ namespace CutMat {
 			ds.Tables->Add("Tabl2");
 			ds.Tables[1]->Columns->Add("delta-1");
 			ds.Tables[1]->Columns->Add("delta-2");
-			for (int i = 0; i < Var0.size(); i++) {
+			for (int i = 0; i < Var1.size(); i++) {
 
 				ds.Tables[1]->Rows->Add(Convert::ToString(Var1[i][0]), Convert::ToString(Var1[i][1]));
 
@@ -335,7 +366,21 @@ namespace CutMat {
 			dataGridView2->DataSource = ds.Tables[1];
 			dataGridView2->AutoResizeColumns();
 
-
+			
+			int max = 0;
+			std::vector<int> xVector;
+			Resulting(mat, complect, Var0, Var1, xVector, max);
+			std::string lab;
+			label5->Text += "(";
+			for (int i = 0; i < xVector.size(); i++)
+			{
+				label5->Text += xVector[i].ToString();
+				if(i<xVector.size()-1)
+					label5->Text += "; ";
+			}
+			label5->Text += ")";
+			label6->Text += max.ToString();
+			
 		}
 	}
 	private: System::Void TextBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
@@ -353,5 +398,7 @@ namespace CutMat {
 	private: System::Void DataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
 	}
-	};
+	private: System::Void Label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

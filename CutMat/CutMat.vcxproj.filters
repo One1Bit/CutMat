@@ -23,10 +23,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\CutMato\Source.h">
+    <ClInclude Include="MyForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Source.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

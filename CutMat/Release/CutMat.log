@@ -1,0 +1,20 @@
+﻿  MyForm.cpp
+C:\Users\One1Bit\source\repos\CutMat\CutMat\MyForm.h(351,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\MyForm.h(361,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\MyForm.h(375,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\MyForm.h(378,9): warning C4018:  <: несоответствие типов со знаком и без знака
+  Source.cpp
+C:\Users\One1Bit\source\repos\CutMat\CutMat\MyForm.cpp(6,32): warning C4829:  Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(14,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(41,9): warning C4244:  инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(42,9): warning C4244:  инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(70,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(121,20): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(122,21): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(125,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(127,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(132,22): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(134,22): warning C4018:  <: несоответствие типов со знаком и без знака
+  Создание кода...
+C:\Users\One1Bit\source\repos\CutMat\CutMat\Source.cpp(142,23): warning C4018:  <: несоответствие типов со знаком и без знака
+  CutMat.vcxproj -> C:\Users\One1Bit\source\repos\CutMat\Release\CutMat.exe
